@@ -8,12 +8,43 @@ export class Hall extends React.Component {
         <svg version="1.1"
           baseProfile="full"
           width="100%" height="100%"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
           <rect width="100%" height="100%" fill="transparent" />
-          <line x1="0%" y1="0%" x2="37.5%" y2="37.5%" stroke="white" strokeWidth="2" />
-          <line x1="100%" y1="0%" x2="62.5%" y2="37.5%" stroke="white" strokeWidth="2" />
-          <line x1="0%" y1="100%" x2="37.5%" y2="62.5%" stroke="white" strokeWidth="2" />
-          <line x1="100%" y1="100%" x2="62.5%" y2="62.5%" stroke="white" strokeWidth="2" />
+          <polygon
+            side="top"
+            vectorEffect="non-scaling-stroke"
+            points="0,0 37.5,37.5 62.5,37.5 100,0"
+            fill="darkgray"
+            stroke="white"
+            strokeWidth="1"
+          />
+          <polygon
+            side="right"
+            vectorEffect="non-scaling-stroke"
+            points="100,0 62.5,37.5 62.5,62.5 100,100"
+            fill="darkgray"
+            stroke="white"
+            strokeWidth="1"
+          />
+          <polygon
+            side="bottom"
+            vectorEffect="non-scaling-stroke"
+            points="100,100 62.5,62.5 37.5,62.5 0,100"
+            opacity=".7"
+            stroke="white"
+            strokeWidth="1"
+          />
+          <polygon
+            side="left"
+            vectorEffect="non-scaling-stroke"
+            points="0,100 37.5,62.5 37.5,37.5 0,0"
+            fill="darkgray"
+            stroke="white"
+            strokeWidth="1"
+          />
         </svg>
       </div>
     );

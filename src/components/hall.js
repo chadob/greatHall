@@ -17,7 +17,7 @@ export class Hall extends React.Component {
             side="top"
             vectorEffect="non-scaling-stroke"
             points="0,0 37.5,37.5 62.5,37.5 100,0"
-            fill="darkgray"
+            opacity=".7"
             stroke="white"
             strokeWidth="1"
           />
@@ -25,7 +25,7 @@ export class Hall extends React.Component {
             side="right"
             vectorEffect="non-scaling-stroke"
             points="100,0 62.5,37.5 62.5,62.5 100,100"
-            fill="darkgray"
+            fill="gray"
             stroke="white"
             strokeWidth="1"
           />
@@ -33,7 +33,7 @@ export class Hall extends React.Component {
             side="bottom"
             vectorEffect="non-scaling-stroke"
             points="100,100 62.5,62.5 37.5,62.5 0,100"
-            opacity=".7"
+            fill="gray"
             stroke="white"
             strokeWidth="1"
           />
@@ -41,7 +41,7 @@ export class Hall extends React.Component {
             side="left"
             vectorEffect="non-scaling-stroke"
             points="0,100 37.5,62.5 37.5,37.5 0,0"
-            fill="darkgray"
+            fill="gray"
             stroke="white"
             strokeWidth="1"
           />

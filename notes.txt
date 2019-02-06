@@ -1,6 +1,22 @@
 Hall:
 1. how to figure out a
-2. 
+2.
 
 
-Thoughts
+Formulas:
+1. Width/height of end
+2. Width/height of window
+3. Placement of window
+4. Placement of door
+5. Width/height of door
+
+State:
+1. number of projects
+2. length of screen
+3. height of screen
+4. project width: ((width screen / 2) - (width end / 2)) / (Math.ceil(#prj / 2))
+5. project on side: Math.ceil(#prj / 2)
+5. spacing: 1/8 * width prj
+6. window: 1/2 width prj
+7. door: 1/4 * width prj
+8. end width: .25 ^ (prj on side)

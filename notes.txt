@@ -19,4 +19,15 @@ State:
 5. spacing: 1/8 * width prj
 6. window: 1/2 width prj
 7. door: 1/4 * width prj
-8. end width: .25 ^ (prj on side)
+8. ratioend: .25 ^ (prj on side)
+8. x end: (.5 - ratioend) * widthscreen
+8. y end: (.5 - ratioend) * heightscreen
+9. hyp end: sqrt(xEnd^2 +yend^2)
+10. ProjectLeft: --4pts clockwise from topleft
+  (idxPrj * xEnd / #prj,  yend / #prj * idxPrj + 10%)
+  ((idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)
+  ((idxPrj +1) * xEnd / #prj,  heightwindow - (yend / #prj * (idxPrj + 1) + 10%))
+  (idxPrj * xEnd / #prj,  heightwindow - (yend / #prj * idxPrj + 10%))
+11. ProjectRight:
+  (widthWindow - (idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)
+  (widthWindow - idxPrj * xEnd / #prj,  yend / #prj * idxPrj + 10%)

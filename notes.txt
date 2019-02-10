@@ -31,3 +31,5 @@ State:
 11. ProjectRight:
   (widthWindow - (idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)
   (widthWindow - idxPrj * xEnd / #prj,  yend / #prj * idxPrj + 10%)
+  (widthWindow - idxPrj * xEnd / #prj, heightWindow - (yend / #prj * idxPrj + 10%))
+  (widthWindow - (idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)

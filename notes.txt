@@ -1,7 +1,10 @@
 Hall:
-1. how to figure out a
-2.
-
+1. Create component for projects
+2. Add doors
+3. Animate walking down hallway (arrow keys to start out click or swipe)
+4. Create State
+-current position
+5. Add my info to end
 
 Formulas:
 1. Width/height of end
@@ -19,17 +22,18 @@ State:
 5. spacing: 1/8 * width prj
 6. window: 1/2 width prj
 7. door: 1/4 * width prj
-8. ratioend: .25 ^ (prj on side)
-8. x end: (.5 - ratioend) * widthscreen
-8. y end: (.5 - ratioend) * heightscreen
-9. hyp end: sqrt(xEnd^2 +yend^2)
+8. ratioEnd: .25 ^ (prj on side)
+8. xEnd: .5 * widthScreen - .5 * ratioEnd * widthScreen
+8. yEnd: .5 * heightScreen - .5 * ratioEnd * heightScreen
+9. hypEnd: sqrt(xEnd^2 +yEnd^2)
 10. ProjectLeft: --4pts clockwise from topleft
-  (idxPrj * xEnd / #prj,  yend / #prj * idxPrj + 10%)
-  ((idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)
-  ((idxPrj +1) * xEnd / #prj,  heightwindow - (yend / #prj * (idxPrj + 1) + 10%))
-  (idxPrj * xEnd / #prj,  heightwindow - (yend / #prj * idxPrj + 10%))
+//x and y coords are checking to see if they are the first project in the row and adjusting appropriately
+  ((idxPrj - 1 < 0 ? 0 : idxPrj) * xEnd / #prj,  yEnd / #prj * (idxPrj - 1 < 0 ? 0 : idxPrj) + 10%)
+  ((idxPrj > 0 ? idxPrj : 1) * xEnd / #prj,  yEnd / #prj * (idxPrj > 0 ? idxPrj : 1) + 10%)
+  ((idxPrj > 0 ? idxPrj : 1) * xEnd / #prj,  heightwindow - (yEnd / #prj * (idxPrj > 0 ? idxPrj : 1) + 10%))
+  ((idxPrj - 1 < 0 ? 0 : idxPrj) * xEnd / #prj,  heightwindow - (yEnd / #prj * (idxPrj - 1 < 0 ? 0 : idxPrj) + 10%))
 11. ProjectRight:
-  (widthWindow - (idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)
-  (widthWindow - idxPrj * xEnd / #prj,  yend / #prj * idxPrj + 10%)
-  (widthWindow - idxPrj * xEnd / #prj, heightWindow - (yend / #prj * idxPrj + 10%))
-  (widthWindow - (idxPrj +1) * xEnd / #prj,  yend / #prj * (idxPrj + 1) + 10%)
+  (widthWindow - (idxPrj +1) * xEnd / #prj,  yEnd / #prj * (idxPrj + 1) + 10%)
+  (widthWindow - idxPrj * xEnd / #prj,  yEnd / #prj * idxPrj + 10%)
+  (widthWindow - idxPrj * xEnd / #prj, heightWindow - (yEnd / #prj * idxPrj + 10%))
+  (widthWindow - (idxPrj +1) * xEnd / #prj,  yEnd / #prj * (idxPrj + 1) + 10%)

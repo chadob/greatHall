@@ -1,39 +1,30 @@
-Hall:
-1. Create component for projects
-2. Add doors
-3. Animate walking down hallway (arrow keys to start out click or swipe)
-4. Create State
--current position
-5. Add my info to end
-
-Formulas:
-1. Width/height of end
-2. Width/height of window
-3. Placement of window
-4. Placement of door
-5. Width/height of door
+Pages:
+a. Loading Screen:
+A. Title Screen:
+- "Press Enter or Click Anywhere to continue"
+- maybe create a gif background
+- Sweet Sound effects for transitions
+-maybe synthwave music
+-adjust text shadow based on position of mouse?
+B. Directions:
+- simple
+C. Hall
+- left and right on keyboard to turn
+- up/down to move forward/backward
+- up/down on mouse to look up/down
+- Collision/max values?
+- links out on doors with "Are you sure?"
+- Windows with window sills
+- Windows have some sort of gloss for reflecting light?
+D. End
+- Click for selection
+- Scrollable
+- Info then maybe links to projects?
 
 State:
-1. number of projects
-2. length of screen
-3. height of screen
-4. project width: ((width screen / 2) - (width end / 2)) / (Math.ceil(#prj / 2))
-5. project on side: Math.ceil(#prj / 2)
-5. spacing: 1/8 * width prj
-6. window: 1/2 width prj
-7. door: 1/4 * width prj
-8. ratioEnd: .25 ^ (prj on side)
-8. xEnd: .5 * widthScreen - .5 * ratioEnd * widthScreen
-8. yEnd: .5 * heightScreen - .5 * ratioEnd * heightScreen
-9. hypEnd: sqrt(xEnd^2 +yEnd^2)
-10. ProjectLeft: --4pts clockwise from topleft
-//x and y coords are checking to see if they are the first project in the row and adjusting appropriately
-  ((idxPrj - 1 < 0 ? 0 : idxPrj) * xEnd / #prj,  yEnd / #prj * (idxPrj - 1 < 0 ? 0 : idxPrj) + 10%)
-  ((idxPrj > 0 ? idxPrj : 1) * xEnd / #prj,  yEnd / #prj * (idxPrj > 0 ? idxPrj : 1) + 10%)
-  ((idxPrj > 0 ? idxPrj : 1) * xEnd / #prj,  heightwindow - (yEnd / #prj * (idxPrj > 0 ? idxPrj : 1) + 10%))
-  ((idxPrj - 1 < 0 ? 0 : idxPrj) * xEnd / #prj,  heightwindow - (yEnd / #prj * (idxPrj - 1 < 0 ? 0 : idxPrj) + 10%))
-11. ProjectRight:
-  (widthWindow - (idxPrj +1) * xEnd / #prj,  yEnd / #prj * (idxPrj + 1) + 10%)
-  (widthWindow - idxPrj * xEnd / #prj,  yEnd / #prj * idxPrj + 10%)
-  (widthWindow - idxPrj * xEnd / #prj, heightWindow - (yEnd / #prj * idxPrj + 10%))
-  (widthWindow - (idxPrj +1) * xEnd / #prj,  yEnd / #prj * (idxPrj + 1) + 10%)
+1. position
+2. Page
+3. Mouse position
+4. xRotation
+5. yRotation
+6.

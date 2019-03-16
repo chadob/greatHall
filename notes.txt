@@ -28,3 +28,5 @@ State:
 4. xRotation
 5. yRotation
 6.
+
+How to organize containers if component needs functions from multiple

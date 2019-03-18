@@ -1,6 +1,7 @@
 .wrap {
-	perspective: 100px;
+	perspective: 500px;
 	perspective-origin: 50% 50%;
+	overflow: hidden;
 }
 .cube {
 	position: relative;
@@ -30,8 +31,7 @@
   background: red;
 }
 .front {
-	background: white;
-	opacity: .5
+	background: purple;
 }
 .right {
 	transform-origin: center left;
@@ -44,7 +44,7 @@
 .top {
 	transform-origin: top center;
   background: black;
-	opacity: .5;
+	/* opacity: .5; */
 }
 .bottom {
 	transform-origin: top center;

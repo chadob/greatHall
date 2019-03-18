@@ -31,7 +31,6 @@ class HallwayContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  length: "1000"
 })
 
 const mapDispatchToProps = dispatch => ({

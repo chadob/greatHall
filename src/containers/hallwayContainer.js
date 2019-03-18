@@ -25,14 +25,12 @@ class HallwayContainer extends Component {
 
   render(){
     return(
-      <MovementContainer length={this.props.length} windowWidth={this.props.windowWidth} windowHeight={this.props.windowHeight}/>
+      <MovementContainer length={this.props.length}/>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  windowWidth: state.windowWidth,
-  windowHeight: state.windowHeight,
   length: "1000"
 })
 

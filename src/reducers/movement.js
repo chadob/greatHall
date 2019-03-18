@@ -1,40 +1,30 @@
-const movement = (state = [], action) => {
+const movement = (state = {}, action) => {
   switch (action.type) {
     case 'TURN_LEFT':
-      return [
+      return {
         ...state,
-        {
           xRotation: action.newRotation
-        }
-      ]
+      }
     case 'TURN_RIGHT':
-      return [
+      return {
         ...state,
-        {
           xRotation: action.newRotation
-        }
-      ]
+      }
     case 'ADJUST_VERT':
-      return [
+      return {
         ...state,
-        {
           yRotation: action.newRotation
-        }
-      ]
+      }
     case 'MOVE_FORWARD':
-      return [
+      return {
         ...state,
-        {
           position: action.newLocation
-        }
-      ]
+      }
     case 'MOVE_BACKWARD':
-      return [
+      return {
         ...state,
-        {
           position: action.newLocation
-        }
-      ]
+      }
     default:
       return state
   }

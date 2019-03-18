@@ -1,14 +1,13 @@
-const resize = (state = [], action) => {
+const resize = (state = {windowWidth: 0, windowHeight: 0}, action) => {
   switch (action.type) {
     case 'RESIZE_WINDOW':
-      return [
+    console.log(state)
+    console.log(action)
+      return {
         ...state,
-        {
-          width: action.width,
-          height: action.height
-        }
-
-      ]
+        windowWidth: action.windowWidth,
+        windowHeight: action.windowHeight
+      }
     default:
       return state
   }

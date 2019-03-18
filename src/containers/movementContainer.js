@@ -15,6 +15,7 @@ class MovementContainer extends Component {
 
   }
   render(){
+    console.log(this.props)
     return(
       <Hallway length={this.props.length} windowWidth={this.props.windowWidth} windowHeight={this.props.windowHeight}/>
     );

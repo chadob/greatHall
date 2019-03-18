@@ -20,6 +20,6 @@ export const moveBackward = (direction, curPos) => ({
 })
 export const resizeWindow = (width, height) => ({
   type: 'RESIZE_WINDOW',
-  width: width,
-  height: height
+  windowWidth: width,
+  windowHeight: height
 })

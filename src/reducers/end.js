@@ -1,4 +1,4 @@
-const end = (state = [], action) => {
+const end = (state = {}, action) => {
   switch (action.type) {
     case 'SET_VISIBILITY_FILTER':
       return action.filter

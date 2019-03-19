@@ -2,15 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import {Hallway} from '../components/hallway'
-import { turnLeft, turnRight, adjustVert, moveForward, moveBackward } from '../actions'
+import { turnLeft, turnRight, mouseView, moveForward, moveBackward } from '../actions'
 
 class MovementContainer extends Component {
   constructor(props) {
     super(props)
-    this.moveAround = this.moveAround.bind(this)
+    this.keyMoveAround = this.keyMoveAround.bind(this)
+    this.mouseMoveAround = this.mouseMoveAround.bind(this)
   }
 
-  moveAround(input) {
+  keyMoveAround(input) {
     console.log(this.props)
     if (input.keyCode === 37 || input.keyCode === 65) {
       this.props.turnLeft(this.props.xRotation)
@@ -25,9 +26,12 @@ class MovementContainer extends Component {
       this.props.moveBackward(this.props.direction, this.props.curPos)
     }
   }
-
+  mouseMoveAround(event) {
+    this.props.mouseView({x: event.x, y: event.y}, this.props.windowWidth, this.props.windowHeight, this.props.yRotation)
+  }
   componentDidMount() {
-    window.addEventListener('keydown', this.moveAround);
+    window.addEventListener('keydown', this.keyMoveAround);
+    window.addEventListener('mousemove', this.mouseMoveAround);
   }
   componentWillUnmount() {
 
@@ -50,6 +54,7 @@ class MovementContainer extends Component {
 function mapStateToProps(state) {
   return {
     xRotation: state.movement.xRotation,
+    yRotation: state.movement.yRotation,
     mousePos: state.movement.mousePos,
     curPos: state.movement.curPos,
     direction: state.movement.direction,
@@ -58,14 +63,11 @@ function mapStateToProps(state) {
     windowHeight: state.resize.windowHeight
   }
 }
-const mouseMovement = coords => {
-  this.props.adjustVert(coords[1]);
-}
 
 const mapDispatchToProps = dispatch => ({
   turnLeft: xRotation => dispatch(turnLeft(xRotation)),
   turnRight: xRotation => dispatch(turnRight(xRotation)),
-  adjustVert: mousePos => dispatch(adjustVert(mousePos)),
+  mouseView: (mousePos, windowWidth, windowHeight, yRotation) => dispatch(mouseView(mousePos, windowWidth, windowHeight, yRotation)),
   moveForward: (direction, curPos) => dispatch(moveForward(direction, curPos)),
   moveBackward: (direction, curPos) => dispatch(moveBackward(direction, curPos))
 })

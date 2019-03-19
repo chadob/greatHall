@@ -1,4 +1,4 @@
-const movement = (state = {xRotation: 0, yRotation: 0, curPos: 100}, action) => {
+const movement = (state = {xRotation: 0, yRotation: 0, curPos: 501, mousePos: {x: 0, y: 0}}, action) => {
   switch (action.type) {
     case 'TURN_LEFT':
       return {
@@ -10,10 +10,12 @@ const movement = (state = {xRotation: 0, yRotation: 0, curPos: 100}, action) => 
         ...state,
           xRotation: action.newRotation
       }
-    case 'ADJUST_VERT':
+    case 'MOUSE_VIEW':
       return {
         ...state,
-          yRotation: action.newRotation
+          mousePos: action.mousePos,
+          xRotation: action.xRotation,
+          yRotation: action.yRotation
       }
     case 'MOVE_FORWARD':
     console.log('hi')

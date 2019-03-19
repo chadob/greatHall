@@ -10,7 +10,7 @@ export class Hallway extends React.Component {
       	<div className="cube" style={{
           width: this.props.windowWidth,
           height: this.props.windowHeight,
-          transform: "translateZ(" + this.props.curPos + "px) rotateY(" + this.props.xRotation + "deg)"}}>
+          transform: "translateZ(" + this.props.curPos + "px) rotateX(" + this.props.yRotation + "deg) rotateY(" + this.props.xRotation + "deg)"}}>
           <div className="ends front" style={{}} ></div>
           <div className="ends back" style={{width: "100%", height: "100%", transform: "rotateY(180deg) translateZ(" + this.props.length + "px)"}} ></div>
           <div className="flats top" style={{height: this.props.length + "px", transform: "rotateX(270deg) translateZ("+ 0 +"px)"}} ></div>

@@ -1,4 +1,4 @@
-const movement = (state = {xRotation: 0, yRotation: 0, curPos: 501, mousePos: {x: 0, y: 0}}, action) => {
+const movement = (state = {xRotation: 0, yRotation: 0, curPos: 500, perspective: 500, mousePos: {x: 0, y: 0}}, action) => {
   switch (action.type) {
     case 'TURN_LEFT':
       return {

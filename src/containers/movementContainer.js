@@ -12,7 +12,6 @@ class MovementContainer extends Component {
   }
 
   keyMoveAround(input) {
-    console.log(this.props)
     if (input.keyCode === 37 || input.keyCode === 65) {
       this.props.turnLeft(this.props.xRotation)
     }
@@ -38,7 +37,6 @@ class MovementContainer extends Component {
   }
 
   render(){
-    console.log(this.props)
     return(
       <Hallway
         length={this.props.length}
@@ -47,6 +45,7 @@ class MovementContainer extends Component {
         xRotation={this.props.xRotation}
         yRotation={this.props.yRotation}
         curPos={this.props.curPos}
+        perspective={this.props.perspective}
       />
     );
   }
@@ -58,6 +57,7 @@ function mapStateToProps(state) {
     mousePos: state.movement.mousePos,
     curPos: state.movement.curPos,
     direction: state.movement.direction,
+    perspective: state.movement.perspective,
     length: "1000",
     windowWidth: state.resize.windowWidth,
     windowHeight: state.resize.windowHeight

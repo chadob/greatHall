@@ -10,12 +10,10 @@ class HallwayContainer extends Component {
   }
 
   updateWindowDimensions() {
-    console.log(window.innerWidth)
     this.props.resizeWindow(window.innerWidth, window.innerHeight)
   }
 
   componentDidMount() {
-    console.log(this)
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
   }

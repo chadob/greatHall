@@ -1,5 +1,4 @@
 .wrap {
-	perspective: 501px;
 	perspective-origin: 50% 50%;
 	overflow: hidden;
 }

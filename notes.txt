@@ -21,12 +21,8 @@ D. End
 - Scrollable
 - Info then maybe links to projects?
 
-State:
-1. position
-2. Page
-3. Mouse position
-4. xRotation
-5. yRotation
-6.
+Problem:
+The cube is rotating around its center and not around the viewer
 
-How to organize containers if component needs functions from multiple
+Solutions:
+I need to declare the point that the viewer is at and use transform origin to rotate it around that point

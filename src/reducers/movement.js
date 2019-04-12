@@ -1,4 +1,4 @@
-const movement = (state = {xRotation: 0, yRotation: 0, curPos: 500, perspective: 500, mousePos: {x: 0, y: 0}}, action) => {
+const movement = (state = {xRotation: 0, yRotation: 0, curPos: 1, perspective: 1000, mousePos: {x: 0, y: 0}}, action) => {
   switch (action.type) {
     case 'TURN_LEFT':
       return {
@@ -18,7 +18,6 @@ const movement = (state = {xRotation: 0, yRotation: 0, curPos: 500, perspective:
           yRotation: action.yRotation
       }
     case 'MOVE_FORWARD':
-    console.log('hi')
       return {
         ...state,
           curPos: action.curPos

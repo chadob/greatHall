@@ -28,6 +28,7 @@ class HallwayContainer extends Component {
   }
 }
 
+
 const mapStateToProps = state => ({
 })
 

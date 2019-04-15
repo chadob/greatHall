@@ -17,10 +17,10 @@ export class Hallway extends React.Component {
       	<div className="cube" style={{
           width: this.props.windowWidth,
           height: this.props.windowHeight,
-          transformOrigin: "50% 50% " + (-1 * this.props.curPos) +"px" ,
-          transform: "translateX(" + (this.props.perspective + this.props.curPos) * Math.sin(this.props.xRotation * Math.PI / 180) + "px) " +
-                     "translateY(" + (this.props.perspective + this.props.curPos) * Math.sin(this.props.yRotation * Math.PI / 180) + "px) " +
-                     "translateZ(" + (this.props.perspective + this.props.curPos) * Math.cos(this.props.xRotation * Math.PI / 180) + "px) " +
+          transformOrigin: "50% 50% " + (0) +"px" ,
+          transform: "translateX(" + (-1 * this.props.perspective) * Math.sin(this.props.xRotation * Math.PI / 180) + "px) " +
+                     "translateY(" + (this.props.perspective) * Math.sin(this.props.yRotation * Math.PI / 180) + "px) " +
+                     "translateZ(" + (1 * this.props.perspective) * Math.cos(this.props.xRotation * Math.PI / 180) + "px) " +
                      "rotateX(" + this.props.yRotation + "deg) " +
                      "rotateY(" + this.props.xRotation + "deg)"
         }}>

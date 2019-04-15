@@ -26,3 +26,6 @@ The cube is rotating around its center and not around the viewer
 
 Solutions:
 I need to declare the point that the viewer is at and use transform origin to rotate it around that point
+"translateX(" + (this.props.perspective + this.props.curPos) * Math.sin(this.props.xRotation * Math.PI / 180) + "px) " +
+           "translateY(" + (this.props.perspective + this.props.curPos) * Math.sin(this.props.yRotation * Math.PI / 180) + "px) " +
+           "translateZ(" + (this.props.perspective + this.props.curPos) * Math.cos(this.props.xRotation * Math.PI / 180) + "px) " +

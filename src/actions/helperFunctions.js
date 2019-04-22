@@ -25,7 +25,7 @@ export const translateCube = function(xRotation, yRotation, curPos, perspective)
   var yRadians = yRotation * Math.PI / 180;
   return {
     translateX: -1 * ((curPos + perspective) * Math.cos(xRadians)) * Math.sin(yRadians),
-    translateY: (curPos + perspective) * Math.sin(yRadians),
+    translateY: (curPos + perspective) * Math.sin(xRadians),
     translateZ: Math.cos(yRadians) * ((curPos + perspective) * Math.cos(xRadians))
   }
 }

@@ -6,8 +6,8 @@ import {
   MOVE_BACKWARD,
   RESIZE_WINDOW
 } from "./types";
-import {mouseMove} from './helperFunctions';
-console.log(mouseMove)
+import {rotateCube, translateCube} from './helperFunctions';
+
 export const turnRight = xRotation => ({
   type: TURN_RIGHT,
   newRotation: xRotation + 1.8
@@ -16,20 +16,41 @@ export const turnLeft = xRotation => ({
   type: TURN_LEFT,
   newRotation: xRotation - 1.8
 })
-export const mouseView = (mousePos, windowWidth, windowHeight, yRotation) => ({
-  type: MOUSE_VIEW,
-  mousePos: mousePos,
-  xRotation: mouseMove(mousePos, windowWidth, windowHeight, yRotation).x,
-  yRotation: mouseMove(mousePos, windowWidth, windowHeight, yRotation).y
-})
-export const moveForward = (direction, curPos) => ({
-  type: MOVE_FORWARD,
-  curPos: curPos + 10
-})
-export const moveBackward = (direction, curPos) => ({
-  type: MOVE_BACKWARD,
-  curPos: curPos - 10
-})
+//inefficient. How can I do this without running function 5x?
+export const mouseView = (mousePos, windowWidth, windowHeight, curPos, perspective) => {
+  const newRotations = rotateCube(mousePos, windowWidth, windowHeight, curPos, perspective);
+  const newTranslations = translateCube(newRotations.xRotation, newRotations.yRotation, curPos, perspective);
+  return {
+    type: MOUSE_VIEW,
+    mousePos: mousePos,
+    xRotation: newRotations.xRotation,
+    yRotation: newRotations.yRotation,
+    translateX: newTranslations.translateX,
+    translateY: newTranslations.translateY,
+    translateZ: newTranslations.translateZ,
+  }
+}
+export const moveForward = (xRotation, yRotation, direction, curPos, perspective) => {
+  const newTranslations = translateCube(xRotation, yRotation, curPos + 10, perspective);
+  console.log(newTranslations)
+  return {
+    type: MOVE_FORWARD,
+    curPos: curPos + 10,
+    translateX: newTranslations.translateX,
+    translateY: newTranslations.translateY,
+    translateZ: newTranslations.translateZ
+  }
+}
+export const moveBackward = (xRotation, yRotation, direction, curPos, perspective) => {
+  const newTranslations = translateCube(xRotation, yRotation, curPos - 10, perspective);
+  return {
+    type: MOVE_BACKWARD,
+    curPos: curPos - 10,
+    translateX: newTranslations.translateX,
+    translateY: newTranslations.translateY,
+    translateZ: newTranslations.translateZ
+  }
+}
 export const resizeWindow = (width, height) => ({
   type: RESIZE_WINDOW,
   windowWidth: width,

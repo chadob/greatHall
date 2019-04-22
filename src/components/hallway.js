@@ -7,6 +7,7 @@ import {Project} from "./project";
 //xRotation describes the angle to rotate around the y axis: so angling the img to the side or spinning it vertically
 export class Hallway extends React.Component {
   render() {
+    console.log(this.props)
     console.log(this.props.curPos);
     console.log(this.props.yRotation)
     console.log(this.props.xRotation)
@@ -17,17 +18,17 @@ export class Hallway extends React.Component {
       	<div className="cube" style={{
           width: this.props.windowWidth,
           height: this.props.windowHeight,
-          transformOrigin: "50% 50% " + (0) +"px" ,
-          transform: "translateX(" + (-1 * this.props.perspective) * Math.sin(this.props.xRotation * Math.PI / 180) + "px) " +
-                     "translateY(" + (this.props.perspective) * Math.sin(this.props.yRotation * Math.PI / 180) + "px) " +
-                     "translateZ(" + (1 * this.props.perspective) * Math.cos(this.props.xRotation * Math.PI / 180) + "px) " +
-                     "rotateX(" + this.props.yRotation + "deg) " +
-                     "rotateY(" + this.props.xRotation + "deg)"
+          transformOrigin: "50% 50% " + (-1 * this.props.curPos) +"px" ,
+          transform: "rotateX(" + this.props.yRotation + "deg) " +
+                     "rotateY(" + this.props.xRotation + "deg) " +
+                     "translateX(" + (this.props.translateX) + "px) " +
+                     "translateY(" + (this.props.translateY) + "px) " +
+                     "translateZ(" + (this.props.translateZ) + "px)"
         }}>
-          <div className="ends front" style={{}} ></div>
-          <div className="ends back" style={{width: "100%", height: "100%", transform: "rotateY(180deg) translateZ(" + this.props.length + "px)"}} ></div>
-          <div className="flats top" style={{height: this.props.length + "px", transform: "rotateX(270deg) translateZ("+ 0 +"px)"}} ></div>
-          <div className="flats bottom" style={{height: this.props.length + "px", transform: "rotateX(270deg) translateZ(" + this.props.windowHeight + "px)"}} ></div>
+          <div className="ends front" style={{width: "100%", height: "100%", transform: "rotateY(180deg) translateZ(" + 0 + "px)"}} ></div>
+          <div className="ends back" style={{width: "100%", height: "100%", transform: "rotateY(0deg) translateZ(" + -1 * this.props.length + "px)"}} ></div>
+          <div className="flats top" style={{height: this.props.length + "px", transform: "rotateX(270deg) translateZ("+ 0 + "px)"}} ></div>
+          <div className="flats bottom" style={{height: this.props.length + "px", transform: "rotateX(90deg) translateY(" +  -1 * this.props.length + "px) translateZ(" + -1 * this.props.windowHeight + "px)"}} ></div>
           <div className="sides left" style={{width: this.props.length + "px", transform: "rotateY(90deg) translateZ(" + 0 + "px)"}} >
             <Project numProj="2"/>
             <Project numProj="2"/>

@@ -1,11 +1,13 @@
 .wrap {
 	perspective-origin: 50% 50%;
 	overflow: hidden;
+	backface-visibility: hidden;
 }
 .cube {
 	position: relative;
 	transform-style: preserve-3d;
 	/* transform: rotateY(215deg) rotateX(45deg); */
+	backface-visibility: hidden;
 }
 .sides {
 	display: flex;
@@ -15,16 +17,19 @@
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	backface-visibility: hidden;
 }
 .ends {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	backface-visibility: hidden;
 }
 .flats {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	backface-visibility: hidden;
 }
 .back {
   background: red;

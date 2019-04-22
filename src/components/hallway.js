@@ -1,10 +1,10 @@
-import React from 'react';
-import "../styles/hallway.css";
-import {Project} from "./project";
 //Increasing perspective makes the cube further away from z = 0;
 // Lower values of translatez make the element futher away from screen
 //yRotation describes the angle to rotate around the x axis: so angling the img away from you or spinning it horizontally
 //xRotation describes the angle to rotate around the y axis: so angling the img to the side or spinning it vertically
+import React from 'react';
+import "../styles/hallway.css";
+import {Project} from "./project";
 export class Hallway extends React.Component {
   render() {
     console.log(this.props)
@@ -19,8 +19,8 @@ export class Hallway extends React.Component {
           width: this.props.windowWidth,
           height: this.props.windowHeight,
           transformOrigin: "50% 50% " + (-1 * this.props.curPos) +"px" ,
-          transform: "rotateX(" + this.props.yRotation + "deg) " +
-                     "rotateY(" + this.props.xRotation + "deg) " +
+          transform: "rotateX(" + this.props.xRotation + "deg) " +
+                     "rotateY(" + this.props.yRotation + "deg) " +
                      "translateX(" + (this.props.translateX) + "px) " +
                      "translateY(" + (this.props.translateY) + "px) " +
                      "translateZ(" + (this.props.translateZ) + "px)"

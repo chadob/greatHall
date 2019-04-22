@@ -1,4 +1,5 @@
 //need to manually change perspective and translateZ to same number initially and take curPos into account
+
 const movement = (state =
   {
     xRotation: 0,

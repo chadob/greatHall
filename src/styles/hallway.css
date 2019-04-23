@@ -1,5 +1,6 @@
 .wrap {
 	perspective-origin: 50% 50%;
+	-webkit-perspective-origin: 50% 50%;
 	overflow: hidden;
 	backface-visibility: hidden;
 }

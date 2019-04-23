@@ -4,36 +4,48 @@
 //xRotation describes the angle to rotate around the y axis: so angling the img to the side or spinning it vertically
 import React from 'react';
 import "../styles/hallway.css";
+import Radium from 'radium';
 import {Project} from "./project";
-export class Hallway extends React.Component {
+
+class Hallway extends React.Component {
   render() {
-    console.log(this.props)
-    console.log(this.props.curPos);
+    console.log(this.props.curPos)
+    console.log(this.props.xRotation);
     console.log(this.props.yRotation)
-    console.log(this.props.xRotation)
-    return (
-      <div className="wrap" style = {{
+    const styles = {
+      wrap: {
         perspective: this.props.perspective + "px"
-      }}>
-      	<div className="cube" style={{
-          width: this.props.windowWidth,
-          height: this.props.windowHeight,
-          transformOrigin: "50% 50% " + (-1 * this.props.curPos) +"px" ,
-          transform: "rotateX(" + this.props.xRotation + "deg) " +
-                     "rotateY(" + this.props.yRotation + "deg) " +
-                     "translateX(" + (this.props.translateX) + "px) " +
-                     "translateY(" + (this.props.translateY) + "px) " +
-                     "translateZ(" + (this.props.translateZ) + "px)"
-        }}>
-          <div className="ends front" style={{width: "100%", height: "100%", transform: "rotateY(180deg) translateZ(" + 0 + "px)"}} ></div>
-          <div className="ends back" style={{width: "100%", height: "100%", transform: "rotateY(0deg) translateZ(" + -1 * this.props.length + "px)"}} ></div>
-          <div className="flats top" style={{height: this.props.length + "px", transform: "rotateX(270deg) translateZ("+ 0 + "px)"}} ></div>
-          <div className="flats bottom" style={{height: this.props.length + "px", transform: "rotateX(90deg) translateY(" +  -1 * this.props.length + "px) translateZ(" + -1 * this.props.windowHeight + "px)"}} ></div>
-          <div className="sides left" style={{width: this.props.length + "px", transform: "rotateY(90deg) translateZ(" + 0 + "px)"}} >
+      },
+      cube: {
+        width: this.props.windowWidth,
+        height: this.props.windowHeight,
+        transformOrigin: "50% 50% " + (-1 * this.props.curPos) +"px" ,
+        transform:
+          "rotateX(" + this.props.xRotation + "deg) " +
+          "rotateY(" + this.props.yRotation + "deg) " +
+          "translateX(" + (this.props.translateX) + "px) " +
+          "translateY(" + (this.props.translateY) + "px) " +
+          "translateZ(" + (this.props.translateZ) + "px)"
+      },
+      front: {width: "100%", height: "100%", transform: "rotateY(180deg) translateZ(" + 0 + "px)"},
+      back: {width: "100%", height: "100%", transform: "rotateY(0deg) translateZ(" + -1 * this.props.length + "px)"},
+      top: {height: this.props.length + "px", transform: "rotateX(270deg) translateZ("+ 0 + "px)"},
+      bottom: {height: this.props.length + "px", transform: "rotateX(90deg) translateY(" +  -1 * this.props.length + "px) translateZ(" + -1 * this.props.windowHeight + "px)"},
+      left: {width: this.props.length + "px", transform: "rotateY(90deg) translateZ(" + 0 + "px)"},
+      right: {width: this.props.length + "px", transform: "rotateY(270deg) translateZ(" + -1 * this.props.windowWidth + "px) translateX(" + -1 * this.props.length + "px)"}
+    }
+    return (
+      <div className="wrap" style = {styles.wrap}>
+      	<div className="cube" style={styles.cube}>
+          <div className="ends front" style={styles.front} ></div>
+          <div className="ends back" style={styles.back} ></div>
+          <div className="flats top" style={styles.top} ></div>
+          <div className="flats bottom" style={styles.bottom} ></div>
+          <div className="sides left" style={styles.left} >
             <Project numProj="2"/>
             <Project numProj="2"/>
           </div>
-          <div className="sides right" style={{width: this.props.length + "px", transform: "rotateY(270deg) translateZ(" + -1 * this.props.windowWidth + "px) translateX(" + -1 * this.props.length + "px)"}} >
+          <div className="sides right" style={styles.right} >
             <Project numProj="2"/>
             <Project numProj="2"/>
           </div>
@@ -42,3 +54,6 @@ export class Hallway extends React.Component {
     );
   }
 }
+
+console.log(Radium(Hallway))
+export default Radium(Hallway);

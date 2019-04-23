@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
-import {Hallway} from '../components/hallway'
+import Hallway from '../components/hallway'
 import { turnLeft, turnRight, mouseView, moveForward, moveBackward } from '../actions'
 
 class MovementContainer extends Component {
@@ -26,7 +26,6 @@ class MovementContainer extends Component {
     }
   }
   mouseMoveAround(event) {
-    console.log(this.props)
     this.props.mouseView({x: event.x, y: event.y}, this.props.windowWidth, this.props.windowHeight, this.props.curPos, this.props.perspective)
   }
   componentDidMount() {

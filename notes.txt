@@ -22,5 +22,6 @@ D. End
 - Info then maybe links to projects?
 
 1. Fix Weird Triangles
-2. Make mouseMove only run once per mouse movement DONE
-3. Make pressing up and down arrow keys change translation DONE
+- Check if glitches happen at same positions and rotations across browsers
+-check if they happen across all viewport sizes
+-check if they happen at all perspectives

@@ -25,12 +25,24 @@ class MovementContainer extends Component {
       this.props.moveBackward(this.props.xRotation, this.props.yRotation, this.props.direction, this.props.curPos, this.props.perspective)
     }
   }
+  throttle(fn, limit) {
+    let waiting = false
+    return (...args) => {
+      if (!waiting) {
+        fn.apply(this, args)
+        waiting = true
+        setTimeout(() => {
+          waiting = false
+        }, limit)
+      }
+    }
+  }
   mouseMoveAround(event) {
     this.props.mouseView({x: event.x, y: event.y}, this.props.windowWidth, this.props.windowHeight, this.props.curPos, this.props.perspective)
   }
   componentDidMount() {
-    window.addEventListener('keydown', this.keyMoveAround);
-    window.addEventListener('mousemove', this.mouseMoveAround);
+    window.addEventListener('keydown', this.throttle(this.keyMoveAround, 10));
+    window.addEventListener('mousemove', this.throttle(this.mouseMoveAround, 10));
   }
   componentWillUnmount() {
 

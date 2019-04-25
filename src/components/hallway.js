@@ -9,9 +9,7 @@ import {Project} from "./project";
 
 class Hallway extends React.Component {
   render() {
-    console.log(this.props.curPos)
-    console.log(this.props.xRotation);
-    console.log(this.props.yRotation)
+    console.log(this.props)
     const styles = {
       wrap: {
         perspective: this.props.perspective + "px"

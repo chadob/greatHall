@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode development",
-    "heroku-postbuild": "npm install && npm start"
+    "heroku-postbuild": "npm install && webpack"
   },
   "author": "Chad Oehlschlaeger-Browne",
   "license": "ISC",

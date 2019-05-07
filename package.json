@@ -4,10 +4,10 @@
   "description": "Portfolio website built in React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "heroku-postbuild": "webpack -p"
+    "test": "webpack -p",
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "author": "Chad Oehlschlaeger-Browne",
   "license": "ISC",

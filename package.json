@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "webpack -p",
-    "heroku-postbuild": "webpack -p"
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "author": "Chad Oehlschlaeger-Browne",
   "license": "ISC",

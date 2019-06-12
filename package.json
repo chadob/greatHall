@@ -4,11 +4,11 @@
   "description": "Portfolio website built in React",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.prod.js",
+    "start": "serve -s build",
     "build": "webpack --config webpack.prod.js",
     "test": "webpack -p",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "heroku-postbuild": "webpack --config webpack.prod.js"
+    "heroku-postbuild": "npm run build"
   },
   "author": "Chad Oehlschlaeger-Browne",
   "license": "ISC",

@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Portfolio website built in React",
   "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
   "scripts": {
     "start": "serve -s build",
     "build": "webpack --config webpack.prod.js",

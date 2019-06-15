@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "start": "serve -s build",
+    "start": "serve -s dist",
     "build": "webpack --config webpack.prod.js",
     "test": "webpack -p",
     "dev": "webpack-dev-server --open --config webpack.dev.js",

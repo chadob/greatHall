@@ -53,5 +53,4 @@
 .bottom {
 	transform-origin: top center;
   background: green;
-	transform-style: preserve-3d;
 }

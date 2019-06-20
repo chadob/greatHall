@@ -76,7 +76,7 @@ function mapStateToProps(state) {
     curPos: state.movement.curPos,
     direction: state.movement.direction,
     perspective: state.movement.perspective,
-    length: "1000",
+    length: "4000",
     windowWidth: state.resize.windowWidth,
     windowHeight: state.resize.windowHeight
   }

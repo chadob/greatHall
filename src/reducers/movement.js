@@ -5,7 +5,7 @@ const movement = (state =
     xRotation: 0,
     yRotation: 0,
     curPos: 0,
-    perspective: 500,
+    perspective: 1000,
     mousePos: {x: 0, y: 0},
     translateX: 0,
     translateY: 0,
